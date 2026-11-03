@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-storage-workbench"
+version = "0.2.0.dev1"
+description = "Read-only Codex storage diagnosis, verified Windows relocation and post-use cleanup."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Codex Storage Workbench contributors"}, {name = "ASEXPIAO (upstream)"}]
+dependencies = []
+classifiers = ["Development Status :: 3 - Alpha", "Operating System :: Microsoft :: Windows",
+               "Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License"]
+
+[project.scripts]
+codex-storage = "codex_relocate.__main__:main"
+codex-relocate = "codex_relocate.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["codex_relocate*"]
