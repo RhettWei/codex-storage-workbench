@@ -9,7 +9,7 @@ RELEASE = ROOT / "release"
 ROOT_FILES = {"README.md", "README.upstream.md", "LICENSE", "NOTICE.md", "UPSTREAM.md",
               "VALIDATION.md", "pyproject.toml", "requirements-build.txt",
               "requirements-build-lock.txt", "Start.cmd", "CONTRIBUTING.md",
-              ".gitignore", ".gitattributes"}
+              ".gitignore", ".gitattributes", "run.py"}
 ROOTS = ("codex_relocate", "tests", "docs", "scripts", ".github", "licenses")
 SUFFIXES = {".py", ".md", ".txt", ".toml", ".yml", ".yaml", ".ps1", ".cmd",
             ".terms", ".png", ".svg"}
@@ -20,8 +20,9 @@ def sources():
     files = []
     for name in sorted(ROOT_FILES):
         path = ROOT / name
-        if path.is_file():
-            files.append(path)
+        if not path.is_file():
+            raise RuntimeError("Missing required source file: " + name)
+        files.append(path)
     stack = [ROOT / name for name in ROOTS if (ROOT / name).is_dir()]
     while stack:
         directory = stack.pop()

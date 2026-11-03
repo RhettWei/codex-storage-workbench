@@ -14,7 +14,7 @@ from codex_relocate.storage import StorageEngine
 class ArchiveTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='storage-archive-test-')
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.source = self.root / 'source'
         self.source.mkdir()
         self.dest = self.root / 'destination'

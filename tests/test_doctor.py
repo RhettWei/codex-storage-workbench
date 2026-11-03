@@ -12,7 +12,7 @@ from codex_relocate import windows as win
 class DoctorTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='storage-doctor-test-')
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.home = self.root / 'profile'
         self.codex = self.home / '.codex'
         self.docs = self.home / 'Documents'

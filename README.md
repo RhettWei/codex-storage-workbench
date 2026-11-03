@@ -18,6 +18,8 @@ Windows 上的 Codex 存储诊断与可验证迁移工具。提供中英文桌�
 
 ## 使用 Windows 便携包
 
+下载 [Windows x64 便携包](https://github.com/RhettWei/codex-storage-workbench/releases/download/v0.2.0.dev1/CodexStorageWorkbench-0.2.0.dev1-Windows-x64.zip)，或查看 [开发预览版与校验文件](https://github.com/RhettWei/codex-storage-workbench/releases/tag/v0.2.0.dev1)。
+
 1. 解压整个 Windows ZIP，保留 EXE 旁的 _internal 目录。当前便携包是未做代码签名的开发预览版。
 2. 将工具放在准备迁移的目录之外；点击 Start.cmd，或者打开 CodexStorageWorkbench.exe。
 3. 先点“只读存储诊断”，再选择源目录、尚不存在的目标目录；需要先验收再清理时，填写尚不存在的独立备份目录。

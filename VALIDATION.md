@@ -8,11 +8,11 @@ Environment: Windows 11, build 26300; x64 Python 3.12.14; Tk 8.6.
 
 Command: python -m unittest discover -s tests -v
 
-- 97 tests ran.
-- 96 passed; 1 skipped because Developer Mode/symbolic-link creation privilege is unavailable.
+- 98 tests ran.
+- 97 passed; 1 skipped because Developer Mode/symbolic-link creation privilege is unavailable.
 - No failures.
 - Includes 27 upstream tests plus new filesystem, archive, CLI, GUI, doctor, planning,
-  JSON-publication and SQLite cases.
+  JSON-publication, SQLite and clean-source-export cases.
 - Both Chinese and English action controls were checked against actual Tk window bounds.
 - GUI flow exercised migration, independent backup, new live writes, user acceptance,
   frozen-database verification and release on temporary synthetic data.
@@ -30,7 +30,10 @@ copy_encrypted_cache=false. No source data migration or cleanup was executed.
 
 This is one Windows machine/version, not acceptance across all Windows 10/11,
 Codex versions or storage configurations. The inherited GitHub workflow was updated
-for Python 3.11/3.12/3.13; the derivative's remote CI has not been run.
+for Python 3.11/3.12/3.13. Remote results are published at
+https://github.com/RhettWei/codex-storage-workbench/actions .
+CI initially exposed tests comparing 8.3 short paths to long paths; temporary fixture
+roots now resolve to canonical paths before identity-sensitive assertions and fault injection.
 
 The desktop-control helper could not start due to the host's existing
 CreateProcessSecurityEnvironment / 0x80070020 error. Automated Tk widget/workflow
